@@ -1,0 +1,963 @@
+:root{
+  --azul: #00083c;
+  --azulEscuro: #000420;
+  --verde: #6fff73;
+  
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5%;
+  user-select: none;
+}
+
+body {
+  background: #00083c;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  margin-top: 1%;
+  height: 100vh;
+}
+
+/* cabeçalho */
+body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 70px 1%;
+  transition: 0.3s;
+  
+}
+
+body header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+  padding: 1% 20%;
+  list-style-type: none;
+  transition: 0.3s;
+  
+}
+
+body header nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: .4s;
+}
+
+header nav ul li a::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background: #6fff73;
+    position: absolute;
+    bottom: -3px;
+    left: -4%;
+    transition: .5s ease-in-out;
+}
+
+header nav ul li a:hover::after{
+    background: #53c057;
+    width: 120%;
+    transition: .2s;
+} 
+
+body header .On {
+  color: #6fff73;
+  font-size: 36px;
+  transition: 0.3s;
+}
+
+body header .On:hover {
+    color: #53c057;
+  transition: 0.3s;
+}
+
+body header .Off {
+  font-size: 24px;
+  color: white;
+  transition: 0.3s;
+}
+
+body header .Off:hover {
+  color: silver;
+  transition: 0.3s;
+}
+
+/* rolagem cabeçalho */
+
+header.rolagem {
+
+    padding: 40px 1%;
+    transition: .3s;
+    display: block;
+}
+
+header.rolagem nav ul {
+    transition: .3s;
+    padding: 0% 15%;
+}
+
+/* btn inicio */
+
+#button.btnOff,
+#button.btnOn {
+
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    color: white;
+    background: var(--azul);
+    box-shadow: 1px 1px 10px white;
+    position: fixed;
+    right: 15px;
+    border-radius: 100%;
+
+}
+
+#button.btnOn {
+    bottom: 15px;
+    transition: .3s;
+    animation: btnAnimation .5s alternate;
+
+}
+
+#button.btnOn:hover {
+    transition: .3s;
+    background: var(--azulEscuro);
+    box-shadow: 1px 1px 10px rgb(41, 41, 41);
+}
+
+#button.btnOff {
+
+    bottom: -10%;
+    animation: btnAnimation .5s alternate-reverse;
+
+}
+
+@keyframes btnAnimation {
+    0% {
+        bottom: -10%;
+    }
+
+    100% {
+        bottom: 15px;
+    }
+}
+
+body section {
+  height: 100vh; 
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+/* inicio */
+body section#start {
+  margin-top: 10px;
+  flex-direction: column;
+  gap: 4%;
+}
+
+body section#start span {
+  font-size: 64px;
+  color: #6fff73;
+}
+
+/* sobre */
+
+/* primeiro */
+
+body section#aboutOne div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+body section#aboutOne div p{
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 650px;
+}
+
+body section#aboutOne div img{
+    width: 650px;
+    margin-left: -16%;
+}
+
+/* segundo */
+
+body section#aboutTwo div p{
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  width: 650px;
+}
+
+/* terceiro */
+
+body section#aboutThree p{
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  width: 650px;
+}
+
+/* calculate */
+
+ body section#calculate .boxCenter{
+  width: 700px;
+  height: 723px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.800);
+  border-radius: 52px;
+  gap: 20px;
+}
+
+body section#calculate .boxCenter .inputs{
+  width: 600px;
+  
+}
+
+body section#calculate .boxCenter .inputs span{
+  padding: 10px;
+  font-size: 32px;
+  color:black;
+  font-weight: bold;
+}
+
+body section#calculate .boxCenter .inputs .input{
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: .3s;
+}
+
+body section#calculate .boxCenter .inputs .input:hover{  
+  background: rgb(181, 181, 181);
+  transition: .3s;
+}
+
+body section#calculate .boxCenter .inputs .input input{
+  outline: none;
+  color: black;
+}
+
+body section#calculate .boxCenter .inputs .input input::placeholder{
+  color: silver;
+}
+
+body section#calculate .boxCenter .inputs .input input:hover::placeholder{
+  color: white;
+}
+
+body section#calculate .boxCenter .inputs .input input{
+  padding-left: 5px;
+  background: transparent;
+  border: none;
+  height: 50px;
+  width: 530px;
+  font-size: 25px;
+  font-weight: bold;
+  transition: .2s;
+
+}
+
+body section#calculate .boxCenter .inputs .input input:focus{
+  color: #001497;
+  transition: .2s;
+}
+
+body section#calculate .boxCenter .inputs .input #spanAnos {
+  font-size: 23px;
+}
+
+body section#calculate .boxCenter .inputs .input {
+  margin-right: -3%;
+}
+
+/* checagem */
+
+body section#calculate .boxCenter #sexo div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ margin-right: 35px;
+ margin-left: 35px;
+}
+
+
+body section#calculate .boxCenter #sexo div .sexoTipo{  
+  position: relative;
+  appearance: none;
+
+  border: 0;
+  outline: 0;
+
+  background: white;
+
+  width: 24px;
+  height: 24px;
+
+  border: 2px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 4px black;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: var(--azulEscuro);
+
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width .2s ease-in-out, height .2s ease-in-out;
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo:checked{
+  border: 3px solid var(--azulEscuro)
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo:checked::after{
+  width: 13px;
+  height: 13px;
+}
+
+
+
+
+/* BTN */
+
+body section#calculate .boxCenter #btn{
+  width: 605px;
+  height: 82px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  outline: none;
+  background: var(--azul);
+  cursor: pointer;
+  transition: .2s;
+}
+
+body section#calculate .boxCenter #btn:hover{
+  color: silver;
+  background: var(--azulEscuro);
+  transition: .2s;
+}
+
+/* linha divisoria */
+
+body section#calculate .boxCenter hr{
+  width: 605px;
+  height: 2px;
+  background: var(--azul);
+  border: none;
+}
+
+/* resultado */
+
+body section#calculate .boxCenter #footer{
+  display: flex;
+  gap: 120px;
+}
+
+body section#calculate .boxCenter #footer div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body section#calculate .boxCenter #footer div span{
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+body section#calculate .boxCenter #footer div span#imcNumber{
+  font-size: 48px;  
+}
+body section#calculate .boxCenter #footer div span#imcClassificacao{
+  font-size: 35px;  
+}
+
+/* barra  */
+::-webkit-scrollbar {
+  width: 14px;
+  background: #00083c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #53c057;
+  border-radius: 50px;
+  border: 4px solid #00083c;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #6fff73;
+}
+
+@media screen and (max-width: 1007px){
+
+/* cabeçalho */
+
+body header {
+ 
+  padding: 30px 0%;
+  
+}
+
+body header nav ul {
+  
+  gap: 12%;
+  padding: 1% 12%;  
+  
+}
+
+body header nav ul li a {
+  
+  border-bottom: 1px solid transparent;
+  
+}
+
+header nav ul li a::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background: #6fff73;
+    position: absolute;
+    bottom: -3px;
+    left: -4%;
+    
+}
+
+body header .On {  
+  font-size: 26px;  
+}
+
+body header .Off {
+  font-size: 20px;  
+}
+
+
+
+/* rolagem cabeçalho */
+
+header.rolagem {
+
+  padding: 20px 1%;
+
+}
+
+header.rolagem nav ul {
+
+    padding: 0% 5%;
+}
+
+/* btn inicio */
+
+#button.btnOff,
+#button.btnOn {
+
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    color: white;
+    background: var(--azul);
+    box-shadow: 1px 1px 10px white;
+    position: fixed;
+    right: 15px;
+    border-radius: 100%;
+
+}
+
+
+
+body section {
+  height: 100vh; 
+  gap: 50px;
+}
+
+/* inicio */
+body section#start {
+  margin-top: 8px; 
+  gap: 2.5%;
+}
+
+body section#start span {
+  font-size: 33px;  
+}
+
+body section#start img{
+  width: 530px;
+}
+
+/* sobre */
+
+/* primeiro */
+
+body section#aboutOne div{
+  gap: 7px;
+}
+
+body section#aboutOne div p{    
+  font-size: 14px;
+  width: 300px;
+}
+
+body section#aboutOne img{
+  height: 225px;
+}
+
+body section#aboutOne div img{
+  width: 300px;
+  height: auto;
+  margin-left: -8%;
+}
+
+/* segundo */
+
+body section#aboutTwo div p{  
+  font-size: 14px;
+  width: 300px;
+}
+
+body section#aboutTwo img{
+  height: 280px;
+  width: auto;
+}  
+
+
+/* terceiro */
+
+body section#aboutThree p{
+  font-size: 12px;
+  width: 300px;
+}
+
+body section#aboutThree img{
+  height: 290px;
+  width: auto;
+}  
+
+/* calculate */
+
+body section#calculate .boxCenter{
+  width: 450px;
+  height: 470px;
+  border-radius: 52px;
+  gap: 10px;
+  padding: 100px 0px;
+}
+
+body section#calculate .boxCenter .inputs{
+  width: 380px;  
+}
+
+body section#calculate .boxCenter .inputs span{
+  padding: 5px;
+  font-size: 18px; 
+}
+
+body section#calculate .boxCenter .inputs .input input{
+  padding-left: 5px;
+  height: 50px;
+  width: 530px;
+  font-size: 14px;
+}
+
+body section#calculate .boxCenter .inputs .input {
+  margin-right: -3%;
+}
+
+body section#calculate .boxCenter .inputs .input #spanAnos {
+  font-size: 14px;  
+}
+
+/* checagem */
+
+body section#calculate .boxCenter #sexo div {
+ margin-right: 35px;
+ margin-left: 35px;
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo{  
+  position: relative;
+  appearance: none;
+
+  border: 0;
+  outline: 0;
+
+  background: white;
+
+  width: 24px;
+  height: 24px;
+
+  border: 2px solid transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 4px black;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  background: var(--azulEscuro);
+
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width .2s ease-in-out, height .2s ease-in-out;
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo:checked{
+  border: 3px solid var(--azulEscuro)
+}
+
+body section#calculate .boxCenter #sexo div .sexoTipo:checked::after{
+  width: 13px;
+  height: 13px;
+}
+
+/* BTN */
+
+body section#calculate .boxCenter #btn{
+  width: 380px;
+  padding: 12px 0%;
+  font-size: 18px;  
+}
+
+/* linha divisoria */
+
+body section#calculate .boxCenter hr{
+  width: 380px;
+  height: 2px;
+}
+
+/* resultado */
+
+body section#calculate .boxCenter #footer{
+  gap: 120px;
+}
+
+body section#calculate .boxCenter #footer div span{
+  font-size: 12px;
+}
+body section#calculate .boxCenter #footer div span#imcNumber{
+  font-size: 30px;  
+}
+body section#calculate .boxCenter #footer div span#imcClassificacao{
+  font-size: 22px;  
+}
+
+}
+
+@media screen and (max-width: 640px){
+
+  /* cabeçalho */
+  
+  body header {
+   
+    padding: 15px 0%;
+    
+  }
+  
+  body header nav ul {
+    
+    gap: 8%;
+    padding: 0.4% 8%;  
+    
+  }
+  
+  body header nav ul li a {
+    
+    border-bottom: 1px solid transparent;
+    
+  }
+  
+  header nav ul li a::after {
+      content: " ";
+      width: 0;
+      height: 2px;
+      background: #6fff73;
+      position: absolute;
+      bottom: -3px;
+      left: -4%;
+      
+  }
+  
+  body header .On {  
+    font-size: 24px;  
+  }
+  
+  body header .Off {
+    font-size: 18px;  
+  }
+  
+  
+  
+  /* rolagem cabeçalho */
+  
+  header.rolagem {
+  
+    padding: 18px 1%;
+  
+  }
+  
+  header.rolagem nav ul {
+  
+      padding: 0% 2%;
+  }
+  
+  /* btn inicio */
+  
+  #button.btnOff,
+  #button.btnOn {
+  
+      text-decoration: none;
+      text-align: center;
+      margin: auto;
+      width: 35px;
+      height: 35px;
+      font-size: 27px;
+      color: white;
+      background: var(--azul);
+      box-shadow: 1px 1px 10px white;
+      position: fixed;
+      right: 15px;
+      border-radius: 100%;
+  
+  }
+  
+  
+  
+  body section {
+    height: 100vh; 
+    gap: 20px;
+  }
+  
+  /* inicio */
+  body section#start {
+    margin-top: 10px; 
+    gap: 3%;
+  }
+  
+  body section#start span {
+    font-size: 23px;  
+  }
+  
+  body section#start img{
+    width: 450px;
+  }
+  
+  /* sobre */
+  
+  /* primeiro */
+  
+  body section#aboutOne div{
+    gap: 5px;
+  }
+  
+  body section#aboutOne div p{    
+    font-size: 10px;
+    width: 280px;
+  }
+  
+  body section#aboutOne img{
+    height: 170px;
+  }
+  
+  body section#aboutOne div img{
+    width: 280px;
+    height: auto;
+    margin-left: -10%;
+  }
+  
+  /* segundo */
+  
+  body section#aboutTwo div p{  
+    font-size: 10px;
+    width: 260px;
+  }
+  
+  body section#aboutTwo img{
+    height: 180px;
+    width: auto;
+  }  
+  
+  
+  /* terceiro */
+  
+  body section#aboutThree p{
+    font-size: 10px;
+    width: 260px;
+  }
+  
+  body section#aboutThree img{
+    height: auto;    
+    width: 180px;
+  }  
+  
+  /* calculate */
+  
+  body section#calculate .boxCenter{
+    width: 450px;
+    height: 470px;
+    border-radius: 52px;
+    gap: 10px;
+    padding: 100px 0px;
+  }
+  
+  body section#calculate .boxCenter .inputs{
+    width: 380px;  
+  }
+  
+  body section#calculate .boxCenter .inputs span{
+    padding: 5px;
+    font-size: 18px; 
+  }
+  
+  body section#calculate .boxCenter .inputs .input input{
+    padding-left: 5px;
+    height: 50px;
+    width: 530px;
+    font-size: 14px;
+  }
+  
+  body section#calculate .boxCenter .inputs .input {
+    margin-right: -3%;
+  }
+  
+  body section#calculate .boxCenter .inputs .input #spanAnos {
+    font-size: 14px;  
+  }
+  
+  /* checagem */
+  
+  body section#calculate .boxCenter #sexo div {
+   margin-right: 35px;
+   margin-left: 35px;
+  }
+  
+  body section#calculate .boxCenter #sexo div .sexoTipo{  
+    position: relative;
+    appearance: none;
+  
+    border: 0;
+    outline: 0;
+  
+    background: white;
+  
+    width: 24px;
+    height: 24px;
+  
+    border: 2px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 4px black;
+    cursor: pointer;
+    transition: border-color .2s;
+  }
+  
+  body section#calculate .boxCenter #sexo div .sexoTipo::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    background: var(--azulEscuro);
+  
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: width .2s ease-in-out, height .2s ease-in-out;
+  }
+  
+  body section#calculate .boxCenter #sexo div .sexoTipo:checked{
+    border: 3px solid var(--azulEscuro)
+  }
+  
+  body section#calculate .boxCenter #sexo div .sexoTipo:checked::after{
+    width: 13px;
+    height: 13px;
+  }
+  
+  /* BTN */
+  
+  body section#calculate .boxCenter #btn{
+    width: 380px;
+    padding: 12px 0%;
+    font-size: 18px;  
+  }
+  
+  /* linha divisoria */
+  
+  body section#calculate .boxCenter hr{
+    width: 380px;
+    height: 2px;
+  }
+  
+  /* resultado */
+  
+  body section#calculate .boxCenter #footer{
+    gap: 120px;
+  }
+  
+  body section#calculate .boxCenter #footer div span{
+    font-size: 12px;
+  }
+  body section#calculate .boxCenter #footer div span#imcNumber{
+    font-size: 30px;  
+  }
+  body section#calculate .boxCenter #footer div span#imcClassificacao{
+    font-size: 22px;  
+  }
+  
+  }

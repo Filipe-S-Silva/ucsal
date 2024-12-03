@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+    <header id="header">
+      <nav>
+        <ul>
+          <li>
+            <a href="#aboutOne" class="Off" id="btnAbout"><span>SOBRE</span></a>
+          </li>
+
+          <li>
+            <a href="#start" class="On" id="btnStart"><span>MEU-IMC</span></a>
+          </li>
+
+          <li>
+            <a href="#calculate" class="Off" id="btnCalculate"
+              ><span>CALCULAR</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="start">
+      <span>ÍNDICE DE MASSA CORPORAL</span>
+      <img src="img/imcInicio.png" />
+    </section>
+
+    <section id="aboutOne">
+      <div>
+        <p>
+          O IMC (Índice de Massa Corporal) é uma medida utilizada para avaliar
+          se o peso de uma pessoa está adequado em relação à sua altura. Ele é
+          calculado através de uma fórmula simples:
+        </p>
+
+        <img src="img/calculoPadraoImc.png" />
+      </div>
+
+      <img src="img/imgSobre1.png" />
+    </section>
+
+    <section id="aboutTwo">
+      <div>
+        <p style="margin-bottom: 30px">
+          A partir do valor do IMC, é possível classificar a pessoa em
+          diferentes faixas de peso, ajudando a identificar se ela está dentro
+          de um intervalo saudável ou se apresenta risco para problemas de saúde
+          relacionados ao peso. As principais classificações do IMC são:
+        </p>
+
+        <p>- Abaixo do peso: IMC abaixo de 18,5</p>
+        <p>- Peso normal: IMC entre 18,5 e 24,9</p>
+        <p>- Sobrepeso: IMC entre 25 e 29,9</p>
+        <p>- Obesidade: IMC entre 30 e 34,9</p>
+        <p>- Obesidade grave: IMC entre 35 e 39,9</p>
+        <p>- Obesidade mórbida: IMC acima de 40</p>
+      </div>
+
+      <img src="img/imgSobre2.png" />
+    </section>
+
+    <section id="aboutThree">
+      <p>
+        É importante destacar que o IMC não leva em consideração fatores como a
+        distribuição de gordura corporal, a quantidade de massa muscular ou a
+        composição do corpo. Por isso, pode haver limitações ao usar o IMC como
+        única ferramenta de avaliação da saúde. Por exemplo, atletas com alta
+        massa muscular podem ter um IMC elevado, mas não estarem acima do peso
+        de forma saudável.
+      </p>
+
+      <img src="img/imgSobre3.png" />
+    </section>
+
+    <section id="calculate">
+
+      <div class="boxCenter">
+
+
+        <div class="inputs" id="peso">
+
+          <span>Peso em kg</span>
+
+          <div class="input">
+
+            <input type="text" id="pesoInput" placeholder="Insira seu peso...">
+            <span>Kg</span>
+
+          </div>
+
+        </div>
+
+        <div class="inputs" id="altura">
+
+          <span>Altura em metros</span>
+          <div class="input">
+            <input type="text" id="alturaInput" placeholder="Insira sua altura..." />
+            <span>m</span>
+          </div>
+
+        </div>
+
+        <div class="inputs" id="idade">
+
+          <span>Idade</span>
+          
+          <div class="input">
+            <input type="text" id="idadeInput" placeholder="Insira sua idade..." >
+            <span id="spanAnos">ANOS</span>
+          </div>
+
+        </div>
+
+        <div class="inputs" id="sexo">
+
+          <span>SEXO</span>
+          <div>         
+            
+            <div>
+              <input type="radio" name="sexo" value="masculino" class="sexoTipo">
+              <span>MASCULINO</span>              
+            </div>
+            
+            <div>
+              <input type="radio" name="sexo" value="feminino" class="sexoTipo">
+              <span>FEMININO</span>            
+            </div>
+
+          </div>
+
+        </div>
+
+        <button id="btn">ENVIAR</button>
+
+        <hr>
+
+        <div id="footer">
+
+          <div>
+            <span id="imcNumber">00.00</span>
+            <span>Seu IMC</span>
+          </div>
+
+          <div>
+            <span id="imcClassificacao">XXXXX</span>
+            <span>Classificação IMC</span>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+    <a id="button" href="#start" class="btnOff">&#8743;</a>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
